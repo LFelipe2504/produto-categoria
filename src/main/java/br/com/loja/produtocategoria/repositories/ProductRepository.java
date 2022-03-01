@@ -7,22 +7,22 @@ import java.util.Map;
 
 import org.springframework.stereotype.Component;
 
-import br.com.loja.produtocategoria.entities.Category;
+import br.com.loja.produtocategoria.entities.Product;
 
 @Component
-public class CategoryRepository {
+public class ProductRepository {
 	
-	private Map<Long, Category> map = new HashMap<>();
+	private Map<Long, Product> map = new HashMap<>();
 
-	public void save(Category cat) {
+	public void save(Product cat) {
 		this.map.put(cat.getId(), cat);
 	}
 
-	public Category findById(Long id) {
+	public Product findById(Long id) {
 		return this.map.get(id);
 	}
 	
-	public List<Category> findAll() {
+	public List<Product> findAll() {
 		return new ArrayList<>(map.values());		
 	}
 }
